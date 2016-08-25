@@ -1,0 +1,22 @@
+<ion-view view-title="点餐">
+    <ion-content>
+        <div>
+            <ion-refresher pulling-text="下拉刷新" pulling-icon="icon ion-fork" on-refresh="refresh()"></ion-refresher>
+
+            <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+                <ion-item ng-repeat="product in products" class="item-avatar item-remove-animate">
+                    <img ng-src="{{product.imgsrc}}">
+                    <h2>{{product.name}}</h2>
+                    <p>{{product.desc}}</p>
+
+                    <ion-option-button class="button-dark icon ion-ios-trash-outline" ng-click="delete(product)"></ion-option-button>
+
+                </ion-item>
+                <!--无限滚动-->
+                <ion-infinite-scroll on-infinite="loadMore()" immediate-check="false"></ion-infinite-scroll>
+        </div>
+        <!--下拉刷新-->
+
+        </ion-list>
+    </ion-content>
+</ion-view>

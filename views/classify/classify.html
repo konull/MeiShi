@@ -1,0 +1,87 @@
+<ion-view hide-nav-bar="true">
+
+
+
+    <ion-content>
+        <ion-tabs class="tabs-dark  tabs-striped tabs-top">
+            <ion-tab title="中 餐">
+                <ion-view>
+                    <ion-content>
+                        <div class="list">
+                            <div class="col col-33 my-float" ng-repeat="product in products" ng-show="product.type=='China'">
+                                <div class="my-home-col-css">
+                                    <a><img ng-src="{{product.imgsrc}}"></a>
+                                    <div>
+                                        <h3 style="font-size:14px;line-height:16px;margin-bottom:6px;">{{product.name}}</h3>
+                                        <p style="font-size:12px;line-height:12px;margin-bottom:0px;">{{product.price}}RMB/例</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ion-content>
+                </ion-view>
+            </ion-tab>
+
+            <ion-tab title="西 餐">
+                <ion-view>
+                    <ion-content>
+                        <div class="list">
+                            <div class="col col-33 my-float" ng-repeat="product in products" ng-show="product.type=='West'">
+                                <div class="my-home-col-css">
+                                    <a><img ng-src="{{product.imgsrc}}"></a>
+                                    <div>
+                                        <h3 style="font-size:14px;line-height:16px;margin-bottom:6px;">{{product.name}}</h3>
+                                        <p style="font-size:12px;line-height:12px;margin-bottom:0px;">{{product.price}}RMB/例</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ion-content>
+                </ion-view>
+            </ion-tab>
+
+            <ion-tab title="甜 点">
+                <ion-view>
+                    <ion-content>
+                        <div class="list">
+                            <div class="col col-33 my-float" ng-repeat="product in products" ng-show="product.type=='Sweet'">
+                                <div class="my-home-col-css">
+                                    <a><img ng-src="{{product.imgsrc}}"></a>
+                                    <div>
+                                        <h3 style="font-size:14px;line-height:16px;margin-bottom:6px;">{{product.name}}</h3>
+                                        <p style="font-size:12px;line-height:12px;margin-bottom:0px;">{{product.price}}RMB/例</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ion-content>
+                </ion-view>
+            </ion-tab>
+
+            <ion-tab title="饮 品">
+                <ion-view>
+                    <ion-content>
+                        <div class="col col-33 my-float" ng-repeat="product in products" ng-show="product.type=='Drink'">
+                            <div class="my-home-col-css">
+                                <a><img ng-src="{{product.imgsrc}}"></a>
+                                <div>
+                                    <h3 style="font-size:14px;line-height:16px;margin-bottom:6px;">{{product.name}}</h3>
+                                    <p style="font-size:12px;line-height:12px;margin-bottom:0px;">{{product.price}}RMB/例</p>
+                                </div>
+                            </div>
+                        </div>
+                    </ion-content>
+                </ion-view>
+            </ion-tab>
+        </ion-tabs>
+
+        <div class="list">
+            <a class="item item-thumbnail-left" href="#" ng-repeat="product in products">
+                <img ng-src="{{product.imgsrc}}">
+                <h2>{{product.name}}</h2>
+                <p>{{product.price}}</p>
+            </a>
+        </div>
+
+    </ion-content>
+</ion-view>

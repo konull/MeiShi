@@ -1,0 +1,75 @@
+<ion-view hide-nav-bar="true">
+    <!--搜索框----------------------------------------------------------------------------------------------------->
+    <div class="bar bar-header bar-clear item-input-inset" style="background:rgba(0,0,0,0.5)">
+        <div class="button button-clear icon-right icon ion-ios-arrow-down">北京</div>
+        <label class="item-input-wrapper">
+            <i class="icon ion-search"></i>
+            <input type="text" placeholder="searching……">
+        </label>
+        <div class="button button-clear icon ion-ios-search"></div>
+    </div>
+
+    <ion-content>
+        <!--轮播图----------------------------------------------------------------------------------------------------->
+            <ion-slide-box auto-play="true" slide-interval="4000"
+                           does-continue="true" active-slide="data.page"
+                           on-slide-changed="slideChanged(index)"
+                           pager-click="pagerClick(index)">
+
+                <ion-slide>
+                    <div class="box"><img src="images/banner01.jpg"></div>
+                </ion-slide>
+                <ion-slide>
+                    <div class="box"><img src="images/banner02.jpg" ></div>
+                </ion-slide>
+                <ion-slide>
+                    <div class="box"><img src="images/banner03.jpg" ></div>
+                </ion-slide>
+                <ion-slide>
+                    <div class="box"><img src="images/banner04.jpg" ></div>
+                </ion-slide>
+                <ion-slide>
+                    <div class="box"><img src="images/banner05.jpg" ></div>
+                </ion-slide>
+            </ion-slide-box>
+
+        <!--商品分类------------------------------------------------------------------------------------------------------->
+        <div class="list">
+            <div class="row my-home-classify-icon" >
+                <div class="col col-25">
+                    <button class="button button-icon icon ion-navicon"></button><span>中 餐</span>
+                </div>
+                <div class="col col-25">
+                    <button class="button button-icon icon ion-navicon"></button><span>西 餐</span>
+                </div><span></span>
+                <div class="col col-25"><span></span>
+                    <button class="button button-icon icon ion-navicon"></button><span>甜 品</span>
+                </div><span></span>
+                <div class="col col-25"><span></span>
+                    <button class="button button-icon icon ion-navicon"></button><span>饮 品</span>
+                </div><span></span>
+            </div>
+        </div>
+
+
+        <!--所有商品列表------------------------------------------------------------------------------------------------------->
+        <div class="list">
+            <div class="col col-50 my-float" ng-repeat="product in products">
+                <div class="my-home-col-css">
+                    <a href="#tabs/detail"><img ng-src="{{product.imgsrc}}"></a>
+                    <div>
+                        <h3>{{product.name}}</h3>
+                        <p>{{product.price}}RMB/例</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <a class="button button-assertive" href="#tabs/detail">查看详情</a>
+        <a class="button button-assertive" href="#tabs/about">查看分类</a>
+    </ion-content>
+</ion-view>
